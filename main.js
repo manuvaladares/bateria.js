@@ -1,4 +1,12 @@
-function playSoundPom() {
-    document.querySelector('#som_tecla_pom').play();
+const listaDeTeclas = document.querySelectorAll('.tecla');
+const listaDeSons = document.querySelectorAll('audio');
+
+function playSound(x) {
+        listaDeSons[x].play();
 }
-document.querySelector('.tecla_pom').onclick = playSoundPom;
+let index = 0;
+while (index < listaDeTeclas.length) {
+    listaDeTeclas[index].onclick = playSound(index);
+    index++;
+
+}
